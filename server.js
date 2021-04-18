@@ -11,8 +11,8 @@ mongoose.connect(process.env.DATABASE, {
     useFindAndModify: false
 }).then( () => console.log('DB Connected'))
 
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 
-app.listen(port, () =>{
-    console.log(`app running on port ${port}`)
+app.listen(port, (req, res) =>{
+    res.send(`app running on port ${port}`)
 })
